@@ -1,0 +1,35 @@
+{
+  "name": "react-australia-map",
+  "version": "0.0.0",
+  "description": "React Australia Map",
+  "main": [
+    "build/react-australia-map.js",
+    "build/react-australia-map.js.map",
+    "build/react-australia-map.min.js",
+    "build/react-australia-map.min.js.map"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pvoznyuk/react-australia-map.git"
+  },
+  "keywords": [
+    "component",
+    "react-component",
+    "react"
+  ],
+  "authors": [
+    "Pavlo Vozniuk <pavlo.vozniuk@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pvoznyuk/react-australia-map",
+  "dependencies": {
+    "react": "^0.14 || ^15"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
