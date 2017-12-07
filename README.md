@@ -17,6 +17,7 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
 [http://pvoznyuk.github.io/react-australia-map](http://pvoznyuk.github.io/react-australia-map)
 
+<img src="img/example.png" alt="Australia map" />
 
 ## Usage
 
@@ -87,7 +88,8 @@ document.body.appendChild(appRoot);
 ReactDOM.render(<App />, appRoot);
 ```
 
-https://pvoznyuk.tinytake.com/media/675054?filename=1512664414053_07-12-2017-04-33-28.png&&type=attachment&&&_felix_session_id=4b0acb6ffeefa79f8b67d5bbbffa75cd&salt=MjE3NzU3NF82NzcwNzcy
+The output will be:  
+<img src="img/example-custom.png" alt="Custom Australia map" />
 
 ## Options
 
@@ -104,6 +106,7 @@ https://pvoznyuk.tinytake.com/media/675054?filename=1512664414053_07-12-2017-04-
 |`customize`| Optional customization of filling per state |
 
 Label options
+
 |prop|description|
 |----|-----------|
 |`textAnchor`| text-anchor for the label (left, right or middle)|
@@ -112,6 +115,7 @@ Label options
 |`fontFamily`| label's font name (by default: `Verdana`)|
 
 Custom regions' labels can have some extra options
+
 |prop|description|
 |----|-----------|
 |`name`| Label's copy (by default it is state's name)|
