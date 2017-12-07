@@ -154,7 +154,7 @@ npm start test.e2e
 ## TODO
 * Fix bug on clicking on the text labels
 * Add hovering styles
-* Allow to send `width` and `height` in `%`
+* Allow to set `width` and `height` in `%`
 
 ## License
 

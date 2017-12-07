@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/data/australia-map-dimensions.js"],"names":[],"mappings":";;;;;;AAAA","file":"australia-map-dimensions.js","sourcesContent":["import data from './australia-states-dimensions.json';\n\nexport default data;\n"]}
+{"version":3,"sources":["../../src/data/australia-map-dimensions.js"],"names":["data"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;kBAEeA,I","file":"australia-map-dimensions.js","sourcesContent":["import data from './australia-states-dimensions.json';\n\nexport default data;\n"]}

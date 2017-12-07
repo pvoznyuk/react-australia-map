@@ -1,6 +1,6 @@
 {
   "name": "react-australia-map",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React Australia Map",
   "main": "lib/index.js",
   "config": {
@@ -35,6 +35,7 @@
     "prop-types": "15.6.0"
   },
   "devDependencies": {
+    "babel-plugin-inline-json-import": "0.2.1",
     "cf-react-component-template": "0.1.8",
     "react-component-template": "0.1.8",
     "react-highlight.js": "1.0.7"
