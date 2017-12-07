@@ -1,6 +1,6 @@
 {
   "name": "react-australia-map",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Australia Map",
   "main": "lib/index.js",
   "config": {
@@ -31,14 +31,12 @@
   },
   "homepage": "https://github.com/pvoznyuk/react-australia-map",
   "peerDependencies": {
-    "react": "^0.14 || ^15"
+    "react": "^15",
+    "prop-types": "15.6.0"
   },
   "devDependencies": {
     "cf-react-component-template": "0.1.8",
     "react-component-template": "0.1.8",
     "react-highlight.js": "1.0.7"
-  },
-  "dependencies": {
-    "prop-types": "15.6.0"
   }
 }
