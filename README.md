@@ -87,6 +87,8 @@ document.body.appendChild(appRoot);
 ReactDOM.render(<App />, appRoot);
 ```
 
+https://pvoznyuk.tinytake.com/media/675054?filename=1512664414053_07-12-2017-04-33-28.png&&type=attachment&&&_felix_session_id=4b0acb6ffeefa79f8b67d5bbbffa75cd&salt=MjE3NzU3NF82NzcwNzcy
+
 ## Options
 
 |prop|description|
