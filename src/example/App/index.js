@@ -19,8 +19,38 @@ const Panel = ({title, code, children}) =>
       {children}
     </div>
   </div>
-
 ;
+
+const mapHandler = event => {
+  alert(event.target.dataset.name);
+};
+
+const customStyling = {
+  'NSW': {
+    'fill': '#86D9E1',
+    'showLabels': true,
+    'label': {
+      'name': '42%',
+      'textAnchor': 'middle',
+      'x': 230,
+      'y': 167,
+      'fill': 'black',
+      'fontSize': 18,
+      'fontFamily': 'Courier New'
+    }
+  },
+  'NT': {
+    'fill': '#1e2032',
+    'showLabels': true,
+    'label': {
+      'name': '13%\n(average)',
+      'textAnchor': 'middle',
+      'fill': 'white',
+      'fontSize': 12,
+      'fontFamily': 'Arial'
+    }
+  }
+};
 
 const App = () =>
   <div className={css.app}>
@@ -39,14 +69,48 @@ const App = () =>
 
     <Panel
       title="Styled map."
-      code={`<AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={200} />`}>
+      code={'<AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={200} />'}>
       <AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={200} />
     </Panel>
 
     <Panel
-      title="Styled map click handler."
-      code={`<AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={200} />`}>
-      <AustraliaMap fill="#5238f1" stroke="#ffffff" strokeWidth={1} width={200} onClick={(event) => console.log(event)} />
+      title="Default Labels and click handler."
+      code={'<AustraliaMap showLabels={true} fill="#54788b" strokeWidth={1} width={350} height={250} onClick={mapHandler} />'}>
+      <AustraliaMap showLabels={true} fill="#54788b" strokeWidth={1} width={350} height={250} onClick={mapHandler} />
+    </Panel>
+
+    <Panel
+      title="Custom regions styling and labels."
+      code={`
+const customStyling = {
+  'NSW': {
+    'fill': '#86D9E1',
+    'showLabels': true,
+    'label': {
+      'name': '42%',
+      'textAnchor': 'middle',
+      'x': 230,
+      'y': 167,
+      'fill': 'black',
+      'fontSize': 18,
+      'fontFamily': 'Courier New'
+    }
+  },
+  'NT': {
+    'fill': '#1e2032',
+    'showLabels': true,
+    'label': {
+      'name': '13%\\n(average)',
+      'textAnchor': 'middle',
+      'fill': 'white',
+      'fontSize': 12,
+      'fontFamily': 'Arial'
+    }
+  }
+};
+
+<AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={350} height={250} customize={customStyling}  />`}>
+      <AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={350} height={250} customize={customStyling} />
     </Panel>
 
   </div>;

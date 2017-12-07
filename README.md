@@ -1,16 +1,10 @@
-# react-australia-map [![npm](https://img.shields.io/npm/v/react-australia-map.svg?style=flat-square)](https://www.npmjs.com/package/react-australia-map)
+# react-australia-map
 
-[![Gitter](https://img.shields.io/gitter/room/pvoznyuk/help.svg?style=flat-square)](https://gitter.im/pvoznyuk/help)
-
-[![CircleCI](https://img.shields.io/circleci/project/pvoznyuk/react-australia-map.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/pvoznyuk/react-australia-map)
-[![AppVeyor](https://img.shields.io/appveyor/ci/pvoznyuk/react-australia-map.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/pvoznyuk/react-australia-map)
-[![Coverage](https://img.shields.io/codecov/c/github/pvoznyuk/react-australia-map.svg?style=flat-square)](https://codecov.io/github/pvoznyuk/react-australia-map?branch=master)
-[![Dependencies](https://img.shields.io/david/pvoznyuk/react-australia-map.svg?style=flat-square)](https://david-dm.org/pvoznyuk/react-australia-map)
-[![Dev Dependencies](https://img.shields.io/david/dev/pvoznyuk/react-australia-map.svg?style=flat-square)](https://david-dm.org/pvoznyuk/react-australia-map#info=devDependencies)
-
-React Australia Map
+This is a simple customizable SVG map of Australia on HTML. This maps shows states delimitations. D3 is not needed.
 
 ## Installation
+
+It requires `react` 15.4.2 or higher, compatible with React 16.0.0
 
 ### NPM
 ```sh
@@ -19,40 +13,72 @@ npm install --save react react-australia-map
 
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
-
-### Bower:
-```sh
-bower install --save https://unpkg.com/react-australia-map/bower.zip
-```
-
-
-### 1998 Script Tag:
-```html
-<script src="https://unpkg.com/react/dist/react.js"></script>
-<script src="https://unpkg.com/react-australia-map/build/react-australia-map.js"></script>
-(Module exposed as `ReactAustraliaMap`)
-```
-
-
 ## Demo
 
 [http://pvoznyuk.github.io/react-australia-map](http://pvoznyuk.github.io/react-australia-map)
 
-## Codepen demo
-
-```js
-// TODO
-```
 
 ## Usage
+
+Customizable map example with `onClick` event.
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {ReactAustraliaMap} from 'react-australia-map';
+import {AustraliaMap} from 'react-australia-map';
+
+const mapHandler = event => {
+  alert(event.target.dataset.name);
+};
 
 const App = () => (
   <div>
-    <ReactAustraliaMap />
+    <AustraliaMap fill="#54788b" strokeWidth={1} width={350} height={250}  onClick={mapHandler} />
+  </div>
+);
+
+const appRoot = document.createElement('div');
+document.body.appendChild(appRoot);
+ReactDOM.render(<App />, appRoot);
+```
+
+Custom regions styling and labels.
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {AustraliaMap} from 'react-australia-map';
+
+const customStyling = {
+  'NSW': {
+    'fill': '#86D9E1',
+    'showLabels': true,
+    'label': {
+      'name': '42%',
+      'textAnchor': 'middle',
+      'x': 230,
+      'y': 167,
+      'fill': 'black',
+      'fontSize': 18,
+      'fontFamily': 'Courier New'
+    }
+  },
+  'NT': {
+    'fill': '#1e2032',
+    'showLabels': true,
+    'label': {
+      'name': '13%\n(average)',
+      'textAnchor': 'middle',
+      'fill': 'white',
+      'fontSize': 12,
+      'fontFamily': 'Arial'
+    }
+  }
+};
+
+const App = () => (
+  <div>
+    <AustraliaMap fill="#ffcb03" stroke="#ffffff" strokeWidth={1} width={350} height={250} customize={customStyling} />
   </div>
 );
 
@@ -63,9 +89,32 @@ ReactDOM.render(<App />, appRoot);
 
 ## Options
 
-```js
-// TODO
-```
+|prop|description|
+|----|-----------|
+|`title`| Content for the Title attribute on the `svg`|
+|`width`| The `width` for rendering, numeric, no `px` suffix|
+|`height`| The `height` for rendering, numeric, no `px` suffix|
+|`fill`| The color for filling (by default: `#D3D3D3`)|
+|`stroke`| The color for stroke (by default: `#D3D3D3`)|
+|`strokeWidth`| The width for stroke (by default: `1`)|
+|`showLabels`| Show/hide labels (by default: `false`)|
+|`label`| It is an object for default label options|
+|`customize`| Optional customization of filling per state |
+
+Label options
+|prop|description|
+|----|-----------|
+|`textAnchor`| text-anchor for the label (left, right or middle)|
+|`fill`| label's color (by default: `white`)|
+|`fontSize`| label's font size (by default: `11`)|
+|`fontFamily`| label's font name (by default: `Verdana`)|
+
+Custom regions' labels can have some extra options
+|prop|description|
+|----|-----------|
+|`name`| Label's copy (by default it is state's name)|
+|`x`| Label's x position|
+|`y`| Label's y position|
 
 ## Development and testing
 
@@ -95,6 +144,11 @@ npm start test.cov
 # to run end-to-end tests
 npm start test.e2e
 ```
+
+## TODO
+* Fix bug on clicking on the text labels
+* Add hovering styles
+* Allow to send `width` and `height` in `%`
 
 ## License
 
