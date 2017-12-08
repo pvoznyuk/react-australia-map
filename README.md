@@ -50,6 +50,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {AustraliaMap} from 'react-australia-map';
 
+// Available states to customize: NSW, NT, QLD, WA, VIC, SA, TAS, ACT
 const customStyling = {
   'NSW': {
     'fill': '#86D9E1',
