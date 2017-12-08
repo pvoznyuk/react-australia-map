@@ -8,7 +8,7 @@ It requires `react` 15.4.2 or higher, compatible with React 16.0.0
 
 ### NPM
 ```sh
-npm install --save react react-australia-map
+npm install --save react-australia-map
 ```
 
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
@@ -34,7 +34,7 @@ const mapHandler = event => {
 
 const App = () => (
   <div>
-    <AustraliaMap fill="#54788b" strokeWidth={1} width={350} height={250}  onClick={mapHandler} />
+    <AustraliaMap fill="#54788b" strokeWidth={1} width={350} height={250} onClick={mapHandler} />
   </div>
 );
 
@@ -104,6 +104,8 @@ The output will be:
 |`showLabels`| Show/hide labels (by default: `false`)|
 |`label`| It is an object for default label options|
 |`customize`| Optional customization of filling per state |
+
+Available states to customize: `NSW`, `NT`, `QLD`, `WA`, `VIC`, `SA`, `TAS`, `ACT`
 
 Label options
 
